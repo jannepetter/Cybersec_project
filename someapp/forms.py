@@ -21,17 +21,16 @@ class MessageForm(forms.Form):
         self.to_user=to_user
 
     def save(self):
-  
-        #insecure design
+        #insecure design. Sender can be manipulated by changing the address bar
         message = Message.objects.create(
             from_user=self.from_user,
             to_user=self.to_user,
             content=self.cleaned_data['content']
         )
 
-        #a more secure design
+        #a more secure design. The sender can't be atleast that easily manipulated
         # message = Message.objects.create(
         #     from_user=self.request.user,
-        #     to_user=self.cleaned_data['to_user'],
+        #     to_user=self.to_user,
         #     content=self.cleaned_data['content']
         # )
