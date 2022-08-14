@@ -58,7 +58,7 @@ def sendMessageView(request,template_name="send_message.html"):
         form.save()
 
         # security logging and monitoring failures.Remove comments to fix.
-        logging.info(f"{datetime.datetime.now()} message send by {request.user}, id: {request.user.id}, from_user:{from_user}, to_user:{to_user}, content:{form.cleaned_data['content']}")
+        # logging.info(f"{datetime.datetime.now()} message send by {request.user}, id: {request.user.id}, from_user:{from_user}, to_user:{to_user}, content:{form.cleaned_data['content']}")
 
     context = {
         "form":form,

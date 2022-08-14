@@ -4,8 +4,7 @@ from django.contrib.auth.models import User
 from someapp.models import Message
 
 class MessageForm(forms.Form):
-    # from_user = forms.CharField(max_length=20)
-    # to_user= forms.CharField(max_length=20)
+    
     content = forms.CharField(widget=forms.Textarea)
 
 
@@ -22,11 +21,7 @@ class MessageForm(forms.Form):
         self.to_user=to_user
 
     def save(self):
-        print('save ----req user',self.request.user)
-        print('cleaned data',self.cleaned_data)
-        print('cleaned data',self.data)
-        print('from_user',self.from_user)
-        print('to_user',self.to_user)
+  
         #insecure design
         message = Message.objects.create(
             from_user=self.from_user,
