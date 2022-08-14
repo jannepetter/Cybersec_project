@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+{% for user in users %}
+<a href="{{'send?to='}} {{user.id}} &from={{sender.id}}">
+    <p>{{user}} {{user.email}}</p>
+</a>
+{% endfor %}
+
+
+</br>
+<a href="/logout">logout</a>
+
+{% endblock %}

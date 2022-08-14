@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h2>Your messages</h2>
+<table>
+    <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Content</th>
+    </tr>
+    {% for message in messages %}
+    <tr>
+        <td>{{message.from_user}}</td>
+        <td>{{message.to_user}}</td>
+        <td>{{message.content|safe}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

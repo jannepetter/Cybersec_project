@@ -1,0 +1,39 @@
+{% block css %}
+<style>
+    .navbar {
+        color: aqua;
+        display: inline-flex;
+    }
+
+    .navbar a {
+        margin: 10px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid;
+        border-collapse: collapse;
+        min-width: 200px;
+    }
+
+    table th {
+        text-align: left;
+    }
+</style>
+
+{% endblock %}
+<div class="navbar">
+    <a href="/home">
+        <h1>Home</h1>
+    </a>
+    <a href="/messages">
+        <h1>Personal Messages</h1>
+    </a>
+    <a href="/allmessages">
+        <h1>All Messages</h1>
+    </a>
+
+</div>
+
+{% block body %}{% endblock %}
